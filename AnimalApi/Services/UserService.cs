@@ -26,14 +26,17 @@ namespace AnimalApi.Services
       new User { Id = 1, FirstName = "Joe", LastName = "Yolo", Username = "joe", Password = "password" },
     };
 
-    public UserService(IOptions<AppSettings> appSettings)
+    private AnimalApiContext _context;
+    public UserService(IOptions<AppSettings> appSettings,AnimalApiContext context)
     {
+      _context = context;
       _appSettings = appSettings.Value;
     }
 
     public User Authenticate(string username, string password)
     {
-      var user = _users.SingleOrDefault(x => x.Username == username && x.Password == password);
+      var userList = _context.Users;
+      var user = userList.SingleOrDefault(x => x.Username == username && x.Password == password);
 
       if (user == null)
       {
@@ -61,10 +64,11 @@ namespace AnimalApi.Services
 
     public IEnumerable<User> GetAll()
     {
-      return _users.Select(x => {
-        x.Password = null;
-        return x;
-      });
+      // return _users.Select(x => {
+      //   x.Password = null;
+      //   return x;
+      // });
+      return _context.Users;
     }
   }
 }
