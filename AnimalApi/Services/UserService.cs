@@ -21,11 +21,6 @@ namespace AnimalApi.Services
   {
     private readonly AppSettings _appSettings;
 
-    private List<User> _users = new List<User> 
-    {
-      new User { Id = 1, FirstName = "Joe", LastName = "Yolo", Username = "joe", Password = "password" },
-    };
-
     private AnimalApiContext _context;
     public UserService(IOptions<AppSettings> appSettings,AnimalApiContext context)
     {
@@ -64,10 +59,6 @@ namespace AnimalApi.Services
 
     public IEnumerable<User> GetAll()
     {
-      // return _users.Select(x => {
-      //   x.Password = null;
-      //   return x;
-      // });
       return _context.Users;
     }
   }
