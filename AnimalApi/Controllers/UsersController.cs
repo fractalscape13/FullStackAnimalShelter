@@ -20,7 +20,7 @@ namespace AnimalApi.Controllers
       _userService = userService;
     }
 
-    // POST /users
+    // POST api/users
     [AllowAnonymous]
     [HttpPost]
     public void Register([FromBody]User newUser)
@@ -29,7 +29,7 @@ namespace AnimalApi.Controllers
       _db.SaveChanges();
     }
 
-    // POST /users/authenticate
+    // POST api/users/authenticate
     [AllowAnonymous]
     [HttpPost("authenticate")]
     public IActionResult Authenticate([FromBody]User userParam)
@@ -46,7 +46,7 @@ namespace AnimalApi.Controllers
       }
     }
     
-    // GET /users
+    // GET api/users
     [HttpGet]
     public IActionResult GetAll()
     {
