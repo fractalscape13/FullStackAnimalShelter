@@ -15,6 +15,5 @@ namespace AnimalApi.Models
     [Required]
     [StringLength(25)]
     public string Breed { get; set; }
-    
   }
 }
