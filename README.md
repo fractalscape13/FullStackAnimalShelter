@@ -1,31 +1,36 @@
 # _Animal Shelter API_
 
-#### _Animal tracking system for dogs & cats in the animal shelter_
+#### _An inventory system for animals in the animal shelter_
 
 #### By: **JW** 
 _April 3, 2020_
 
 ## Description
 
-_This API allows users to GET, POST, PUT, and DELETE listings of dogs and cats in the animal shelter._
+_This API allows users to GET, POST, PUT, and DELETE listings of animals in the animal shelter.  It has GET/POST routes for creating a user and an associated authentication token and requires authentication tokens for POST/PUT/DELETE animal routes._
 
 ## Specifications / User Stories:
 * A user is able to GET all animals in the shelter.
 * A user is able to GET an individual animal listing.
 * A user is able to POST a new user (username and password fields required).
 * A user is able to POST using username/password to receive token
-* A user is able to receive a JSON web token (expires 1 day after issuance) by sending a valid username and password in a POST request to '/users/authenticate'. Web tokens are needed to authenticate user requests to POST/PUT/DELETE animal listings. No authenication needed for GET requests.  As is, the project seeds the database with one user (username: joe, password: password) and four animals.
+* A user is able to receive a JSON web token (expires 1 day after issuance) by sending a valid username and password in a POST request to 'api/users/authenticate'. Web tokens are needed to authenticate user requests to POST/PUT/DELETE animal listings. No authenication needed for GET requests for animals.  Token is needed for user GET request.  As is, the project seeds the database with one user (username: joe, password: password) and four animals.
 * A user is able to POST a new animal listing using bearer token authentication.
 * A user is able to PUT (edit) an individual animal listing using bearer token authentication.
 * A user is able to DELETE an individual animal listing using bearer token authentication.
 * A user is able to GET the full list of users using bearer token authentication.
-* A user is able to view Swagger UI
+* A user is able to view Swagger UI by navigating to http://localhost:5004/swagger/index.html
 
 ## API Endpoints Documentation
 * Route: api/users | Method: POST | No authentication token needed, creates new user 
-* Route: api/users/authenticate | Method: POST | No authentication token needed, creates new token for user using username and password from user object
+* Route: api/users/authenticate | Method: POST | Creates new authentication token for user using username and password from user object
 * Route: api/users | Method: GET | Authentication token needed, shows full list of users
 * Route: api/users | Method: GET | Authentication token needed, shows full list of users
+* Route: api/animals | Method: GET | Shows full list of animals in database
+* Route: api/animals/id | Method: GET | Shows individual animal by id property
+* Route: api/animals | Method: POST | Authentication token needed, adds an animal to database
+* Route: api/animals/id | Method: POST | Authentication token neederd, edits an existing animal in database
+* Route: api/animals/id | Method: DELETE | Authentication token needed, deletes an individual animal in database
 
 
 ## Setup/Installation Requirements
@@ -90,7 +95,7 @@ _Recreate the ``joseph_wangemann`` database using the following commands (in Ter
 
 _Run this application by entering the following command in Terminal (macOS) or PowerShell (Windows) at the root of the AnimalApi directory:_
 * ``dotnet run`` or ``dotnet watch run``
-* access the [Swagger UI](http://localhost:5004/swagger/index.html#/) for testing this API
+* access the [Swagger UI](http://localhost:5004/swagger/index.html) for testing this API
 
 _To view/edit the source code of this application, open the contents of the AnimalApi.Solution directory in a text editor or IDE of your choice (e.g., to open all contents of the directory in Visual Studio Code on macOS, enter the command_ ``code .`` _in Terminal at the root of the AnimalApi.Solution directory)._
 
