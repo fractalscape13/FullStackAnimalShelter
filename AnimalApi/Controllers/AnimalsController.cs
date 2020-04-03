@@ -52,7 +52,7 @@ namespace AnimalApi.Controllers
     }
 
     // POST api/animals
-    // [Authorize]
+    [Authorize]
     [HttpPost]
     public void Post([FromBody] Animal animal)
     {
