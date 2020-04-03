@@ -2,11 +2,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using AnimalApi.Services;
 using AnimalApi.Models;
-using System.Linq;
 
 namespace AnimalApi.Controllers
 {
-  // [Authorize]
+  [Authorize]
   [ApiController]
   [Route("api/[controller]")]
   [ApiVersion("1.0")]
@@ -22,7 +21,7 @@ namespace AnimalApi.Controllers
     }
 
     // POST /users
-    // [AllowAnonymous]
+    [AllowAnonymous]
     [HttpPost]
     public void Register([FromBody]User newUser)
     {
@@ -31,7 +30,7 @@ namespace AnimalApi.Controllers
     }
 
     // POST /users/authenticate
-    // [AllowAnonymous]
+    [AllowAnonymous]
     [HttpPost("authenticate")]
     public IActionResult Authenticate([FromBody]User userParam)
     {

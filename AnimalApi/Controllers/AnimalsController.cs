@@ -41,11 +41,10 @@ namespace AnimalApi.Controllers
       }
 
       List<Animal> animalList = query.ToList(); 
-      animalList.Sort();
       return animalList;
     }
 
-    // GET api/animals/5
+    // GET api/animals/id
     [HttpGet("{id}")]
     public ActionResult<Animal> Get(int id)
     {
@@ -62,7 +61,7 @@ namespace AnimalApi.Controllers
     }
 
     // PUT api/animals/1
-    // [Authorize]
+    [Authorize]
     [HttpPut("{id}")]
     public void Put(int id, [FromBody] Animal animal)
     {
@@ -72,7 +71,7 @@ namespace AnimalApi.Controllers
     }
 
     // DELETE api/animals/1
-    // [Authorize]
+    [Authorize]
     [HttpDelete("{id}")]
     public void Delete(int id)
     {
