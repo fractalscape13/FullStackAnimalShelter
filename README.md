@@ -19,6 +19,7 @@ _This API allows users to GET, POST, PUT, and DELETE listings of dogs and cats i
 * A user is able to PUT (edit) an individual animal listing using bearer token authentication.
 * A user is able to DELETE an individual animal listing using bearer token authentication.
 * A user is able to GET the full list of users using bearer token authentication.
+* A user is able to view Swagger UI
 
 ## API Endpoints Documentation
 * Route: api/users | Method: POST | No authentication token needed, creates new user 
