@@ -12,9 +12,20 @@ _This API allows users to GET, POST, PUT, and DELETE listings of dogs and cats i
 ## Specifications / User Stories:
 * A user is able to GET all animals in the shelter.
 * A user is able to GET an individual animal listing.
+* A user is able to POST a new user (username and password fields required).
+* A user is able to POST using username/password to receive token
 * A user is able to receive a JSON web token (expires 1 day after issuance) by sending a valid username and password in a POST request to '/users/authenticate'. Web tokens are needed to authenticate user requests to POST/PUT/DELETE animal listings. No authenication needed for GET requests.  As is, the project seeds the database with one user (username: joe, password: password) and four animals.
+* A user is able to POST a new animal listing using bearer token authentication.
 * A user is able to PUT (edit) an individual animal listing using bearer token authentication.
 * A user is able to DELETE an individual animal listing using bearer token authentication.
+* A user is able to GET the full list of users using bearer token authentication.
+
+## API Endpoints Documentation
+* Route: api/users | Method: POST | No authentication token needed, creates new user 
+* Route: api/users/authenticate | Method: POST | No authentication token needed, creates new token for user using username and password from user object
+* Route: api/users | Method: GET | Authentication token needed, shows full list of users
+* Route: api/users | Method: GET | Authentication token needed, shows full list of users
+
 
 ## Setup/Installation Requirements
 
