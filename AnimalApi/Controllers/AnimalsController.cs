@@ -60,7 +60,7 @@ namespace AnimalApi.Controllers
       _db.SaveChanges();
     }
 
-    // PUT api/animals/1
+    // PUT api/animals/id
     [Authorize]
     [HttpPut("{id}")]
     public void Put(int id, [FromBody] Animal animal)
@@ -70,7 +70,7 @@ namespace AnimalApi.Controllers
       _db.SaveChanges();
     }
 
-    // DELETE api/animals/1
+    // DELETE api/animals/id
     [Authorize]
     [HttpDelete("{id}")]
     public void Delete(int id)
