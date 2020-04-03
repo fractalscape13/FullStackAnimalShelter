@@ -62,8 +62,8 @@ namespace AnimalApi.Migrations
                         new
                         {
                             AnimalId = 4,
-                            Breed = "barn cat",
-                            Name = "Hans",
+                            Breed = "siamese",
+                            Name = "Hans Yolo",
                             Type = "cat"
                         });
                 });
@@ -77,11 +77,15 @@ namespace AnimalApi.Migrations
 
                     b.Property<string>("LastName");
 
-                    b.Property<string>("Password");
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(25);
 
                     b.Property<string>("Token");
 
-                    b.Property<string>("Username");
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasMaxLength(25);
 
                     b.HasKey("Id");
 

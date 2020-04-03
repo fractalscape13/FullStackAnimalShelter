@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AnimalApi.Migrations
 {
     [DbContext(typeof(AnimalApiContext))]
-    [Migration("20200403164059_Initial")]
+    [Migration("20200403220350_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -64,8 +64,8 @@ namespace AnimalApi.Migrations
                         new
                         {
                             AnimalId = 4,
-                            Breed = "barn cat",
-                            Name = "Hans",
+                            Breed = "siamese",
+                            Name = "Hans Yolo",
                             Type = "cat"
                         });
                 });
@@ -79,11 +79,15 @@ namespace AnimalApi.Migrations
 
                     b.Property<string>("LastName");
 
-                    b.Property<string>("Password");
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(25);
 
                     b.Property<string>("Token");
 
-                    b.Property<string>("Username");
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasMaxLength(25);
 
                     b.HasKey("Id");
 

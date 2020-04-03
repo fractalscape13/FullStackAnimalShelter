@@ -30,8 +30,8 @@ namespace AnimalApi.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     FirstName = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
-                    Username = table.Column<string>(nullable: true),
-                    Password = table.Column<string>(nullable: true),
+                    Username = table.Column<string>(maxLength: 25, nullable: false),
+                    Password = table.Column<string>(maxLength: 25, nullable: false),
                     Token = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -47,7 +47,7 @@ namespace AnimalApi.Migrations
                     { 1, "husky", "Nanuk", "dog" },
                     { 2, "husky/malamute", "Qiba", "dog" },
                     { 3, "barn cat", "Meowsley", "cat" },
-                    { 4, "barn cat", "Hans", "cat" }
+                    { 4, "siamese", "Hans Yolo", "cat" }
                 });
 
             migrationBuilder.InsertData(
