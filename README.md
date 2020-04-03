@@ -2,16 +2,17 @@
 
 #### _Animal tracking system for dogs & cats in the animal shelter_
 
-#### By: **JW** April 3, 2020
+#### By: **JW** 
+_April 3, 2020_
 
 ## Description
 
 _This API allows users to GET, POST, PUT, and DELETE listings of dogs and cats in the animal shelter._
 
-## Specification user stories:
+## Specifications / User Stories:
 * A user is able to GET all animals in the shelter.
 * A user is able to GET an individual animal listing.
-* A user is able to receive a JSON web token (expires 1 day after issuance) by sending a valid username and password in a POST request to '/users/authenticate'. Web tokens are needed to authenticate user requests to POST/PUT/DELETE animal listings. No authenication needed for GET requests.
+* A user is able to receive a JSON web token (expires 1 day after issuance) by sending a valid username and password in a POST request to '/users/authenticate'. Web tokens are needed to authenticate user requests to POST/PUT/DELETE animal listings. No authenication needed for GET requests.  As is, the project seeds the database with one user (username: joe, password: password) and four animals.
 * A user is able to PUT (edit) an individual animal listing using bearer token authentication.
 * A user is able to DELETE an individual animal listing using bearer token authentication.
 
@@ -68,18 +69,18 @@ _Enter the following commands in Terminal (macOS) or PowerShell (Windows):_
 * ``git clone https://github.com/fractalscape13/AnimalApi.Solution``
 * ``cd AnimalApi.Solution/AnimalApi``
 
-_Confirm that you have navigated to the TravelApi directory (e.g., by entering the command_ ``pwd`` _in Terminal)._
+_Confirm that you have navigated to the AnimalApi directory (e.g., by entering the command_ ``pwd`` _in Terminal)._
 
-_Recreate the ``joseph_wangemann`` database using the following commands (in Terminal on macOS or PowerShell on Windows) at the root of the TravelApi directory:_
+_Recreate the ``joseph_wangemann`` database using the following commands (in Terminal on macOS or PowerShell on Windows) at the root of the AnimalApi directory:_
 * ``dotnet restore``
 * ``dotnet build``
 * ``dotnet ef database update``
 
-_Run this application by entering the following command in Terminal (macOS) or PowerShell (Windows) at the root of the TravelApi directory:_
+_Run this application by entering the following command in Terminal (macOS) or PowerShell (Windows) at the root of the AnimalApi directory:_
 * ``dotnet run`` or ``dotnet watch run``
 * access the [Swagger UI](http://localhost:5004/swagger/index.html#/) for testing this API
 
-_To view/edit the source code of this application, open the contents of the TravelApi.Solution directory in a text editor or IDE of your choice (e.g., to open all contents of the directory in Visual Studio Code on macOS, enter the command_ ``code .`` _in Terminal at the root of the TravelApi.Solution directory)._
+_To view/edit the source code of this application, open the contents of the AnimalApi.Solution directory in a text editor or IDE of your choice (e.g., to open all contents of the directory in Visual Studio Code on macOS, enter the command_ ``code .`` _in Terminal at the root of the AnimalApi.Solution directory)._
 
 ## Technologies Used
 
