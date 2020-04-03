@@ -1,21 +1,23 @@
 # _Animal Shelter API_
 
-#### _practice building an API_
+#### _Animal tracking system for dogs & cats in the animal shelter_
 
-#### By: **Joseph Wangemann** April 3, 2020
+#### By: **JW** April 3, 2020
 
 ## Description
 
-_This API allows users to GET, POST, PUT, and DELETE postings of dogs and cats in the animal shelter._
+_This API allows users to GET, POST, PUT, and DELETE listings of dogs and cats in the animal shelter._
 
 ## Specification user stories:
-* A user is able to GET and POST reviews about travel destinations.
-* A user is able to GET reviews by country, city, or destination name. Reviews are returned in order of highest to lowest rating.
-* A user is able to see the most popular travel destinations by overall rating.
-* A user is able to PUT and DELETE reviews.
-* A user is able to receive a JSON web token (expires 1 day after issuance) by sending a valid username and password in a POST request to '/users/authenticate'. Web tokens are not currently used to authenticate user requests to GET/POST/PUT/DELETE reviews.
+* A user is able to GET all animals in the shelter.
+* A user is able to GET an individual animal listing.
+* A user is able to receive a JSON web token (expires 1 day after issuance) by sending a valid username and password in a POST request to '/users/authenticate'. Web tokens are needed to authenticate user requests to POST/PUT/DELETE animal listings. No authenication needed for GET requests.
+* A user is able to PUT (edit) an individual animal listing using bearer token authentication.
+* A user is able to DELETE an individual animal listing using bearer token authentication.
 
 ## Setup/Installation Requirements
+
+_Setup assumes use of Git version control_
 
 ### Install .NET Core
 
@@ -63,12 +65,12 @@ _Add the MySQL environment variable to the System PATH. Instructions for Windows
 
 _Enter the following commands in Terminal (macOS) or PowerShell (Windows):_
 * ``cd desktop``
-* ``git clone`` followed by the URL to this repository
-* ``cd TravelApi.Solution/TravelApi``
+* ``git clone https://github.com/fractalscape13/AnimalApi.Solution``
+* ``cd AnimalApi.Solution/AnimalApi``
 
 _Confirm that you have navigated to the TravelApi directory (e.g., by entering the command_ ``pwd`` _in Terminal)._
 
-_Recreate the ``travel`` database using the following commands (in Terminal on macOS or PowerShell on Windows) at the root of the TravelApi directory:_
+_Recreate the ``joseph_wangemann`` database using the following commands (in Terminal on macOS or PowerShell on Windows) at the root of the TravelApi directory:_
 * ``dotnet restore``
 * ``dotnet build``
 * ``dotnet ef database update``
@@ -83,17 +85,17 @@ _To view/edit the source code of this application, open the contents of the Trav
 
 * Git
 * C#
+* .NET Core 2.2
 * dotnet script
+* Asp.Net Core 2.2 MVC
 * MySQL
 * Entity Framework Core 2.2
-* RestSharp version 106.6.10
-* Newtonsoft.Json version 12.0.2
 * Swagger 3.0 documentation (swagger.json)
 * NSwag
 * JSON Web Token Authentication
 
 ## License
 
-Licensed under the MIT license.
+_MIT license_
 
-&copy; 2020 - Joseph Wangemann
+&copy; 2020 - JW
