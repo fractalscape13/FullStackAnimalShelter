@@ -6,3 +6,5 @@ export const DELETE_ANIMAL = 'DELETE_ANIMAL';
 export const EDIT_ANIMAL = 'EDIT_ANIMAL';
 export const SHOW_FORM = 'SHOW_FORM';
 export const HIDE_FORM = 'HIDE_FORM';
+export const TOGGLE_EDITING_TRUE = 'TOGGLE_EDITING_TRUE';
+export const TOGGLE_EDITING_FALSE = 'TOGGLE_EDITING_FALSE';

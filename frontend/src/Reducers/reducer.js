@@ -4,7 +4,9 @@ let initialState = {
   list: [],
   isLoaded: false,
   error: false,
-  formVisible: false
+  formVisible: false,
+  editing: false,
+  currentAnimal: null
 }
 
 export default (state=initialState, action) => {
@@ -36,6 +38,16 @@ export default (state=initialState, action) => {
     case c.HIDE_FORM:
       return Object.assign({}, state, {
         formVisible: false
+      })
+    case c.TOGGLE_EDITING_TRUE:
+      console.log("ACTION ID", action.id)
+      return Object.assign({}, state, {
+        editing: true, 
+        currentAnimal: action.id
+      })
+    case c.TOGGLE_EDITING_FALSE:
+      return Object.assign({}, state, {
+        editing: false
       })
       default:
         return state;

@@ -1,41 +1,48 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import NewAnimalForm from './NewAnimalForm';
-import {showForm, hideForm} from '../Actions/index';
+import EditForm from './EditForm';
+import {showForm, showEditForm} from '../Actions/index';
 
 function AnimalList(props) {
   const dispatch = useDispatch();
   const error = useSelector(state => state.error);
   const isLoaded = useSelector(state => state.isLoaded);
   const formVisible = useSelector(state => state.formVisible);
+  const editing = useSelector(state => state.editing);
 
   function handleDelete(id) {
     const requestOptions = { 
       method: 'DELETE',
     };
     fetch(('http://localhost:5004/api/animals/' + id), requestOptions)
-    .then(async response => {
-      const data = await response.json();
-      console.log("DATA", data)
-      dispatch(hideForm());
-      if (!response.ok) {
-        console.log("delete error")
-      }
-    })
+    .then(response => response.json())
+    //   console.log("DATA", data)
+    //   dispatch(hideForm());
+    //   if (!response.ok) {
+    //     console.log("delete error")
+    //   }
+    // }
     .catch(error => {
       console.log("there was a delete error", error)
     });
   }
 
-  function handleEdit(id) {
-    console.log(id)
+  function handleEditClick(id) {
+    dispatch(showEditForm(id));
   }
 
   function handleAddClick(){
     dispatch(showForm());
   }
 
-  if (formVisible) {
+  if (editing) {
+    return (
+      <React.Fragment>
+        <EditForm />
+      </React.Fragment>
+    )
+  } else if (formVisible) {
     return (
       <React.Fragment>
         <NewAnimalForm />
@@ -58,7 +65,7 @@ function AnimalList(props) {
                 <p>{animal.type}</p>
                 <p>{animal.breed}</p>
                 <button onClick={() => handleDelete(animal.animalId)}>Delete</button>
-                <button onClick={() => handleEdit(animal.animalId)}>Edit</button>
+                <button onClick={() => handleEditClick(animal.animalId)}>Edit</button>
               </li>
             </div>
             )}

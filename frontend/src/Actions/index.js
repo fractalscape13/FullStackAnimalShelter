@@ -40,3 +40,16 @@ export function hideForm() {
     type: c.HIDE_FORM
   }
 }
+
+export function showEditForm(id) {
+  return {
+    type: c.TOGGLE_EDITING_TRUE,
+    currentAnimal: id
+  }
+}
+
+export function hideEditForm() {
+  return {
+    type: c.TOGGLE_EDITING_FALSE
+  }
+}
