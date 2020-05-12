@@ -40,14 +40,15 @@ export default (state=initialState, action) => {
         formVisible: false
       })
     case c.TOGGLE_EDITING_TRUE:
-      console.log("ACTION ID", action.id)
+      console.log("ACTION", action)
       return Object.assign({}, state, {
         editing: true, 
-        currentAnimal: action.id
+        currentAnimal: action.currentAnimal
       })
     case c.TOGGLE_EDITING_FALSE:
       return Object.assign({}, state, {
-        editing: false
+        editing: false,
+        currentAnimal: null
       })
       default:
         return state;

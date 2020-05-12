@@ -5,15 +5,17 @@ import { hideEditForm } from '../Actions/index';
 function EditForm() {
   const currentAnimal = useSelector(state => state.currentAnimal);
   const dispatch = useDispatch();
-  console.log("CURRENT ANIMAL", currentAnimal)
+  console.log("CURRENT ANIMAL", currentAnimal.animalId)
 
   function handleEdit(event) {
     const requestOptions = { 
     method: 'PUT',
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({name: event.target.name.value, type: event.target.type.value, breed: event.target.breed.value})
+    // id: currentAnimal.animalId,
+    body: JSON.stringify({animalId: currentAnimal.animalId, name: event.target.name.value, type: event.target.type.value, breed: event.target.breed.value
+    })
   };
-  fetch('http://localhost:5004/api/animals' + currentAnimal.id, requestOptions)
+  fetch('http://localhost:5004/api/animals/' + currentAnimal.animalId, requestOptions)
   .then(async response => {
     const data = await response.json();
     if (!response.ok) {
@@ -26,21 +28,25 @@ function EditForm() {
   });
 }
 
+let currentName = currentAnimal.name;
+let currentType = currentAnimal.type;
+let currentBreed = currentAnimal.breed;
+
   return (
     <React.Fragment>
       <form onSubmit={handleEdit}>
         <input
           type="text"
           name="name"
-          defaultValue="" /><br />
+          defaultValue={currentName} /><br />
         <input
           type="text"
           name="type"
-          defaultValue="Type of animal" /><br />
+          defaultValue={currentType} /><br />
         <input
           type="text"
           name="breed"
-          defaultValue="Breed" /><br />
+          defaultValue={currentBreed} /><br />
         <button type="submit">Update animal!</button>
       </form>
     </React.Fragment>

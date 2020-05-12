@@ -41,10 +41,10 @@ export function hideForm() {
   }
 }
 
-export function showEditForm(id) {
+export function showEditForm(animal) {
   return {
     type: c.TOGGLE_EDITING_TRUE,
-    currentAnimal: id
+    currentAnimal: animal
   }
 }
 

@@ -28,8 +28,8 @@ function AnimalList(props) {
     });
   }
 
-  function handleEditClick(id) {
-    dispatch(showEditForm(id));
+  function handleEditClick(animal) {
+    dispatch(showEditForm(animal));
   }
 
   function handleAddClick(){
@@ -65,7 +65,7 @@ function AnimalList(props) {
                 <p>{animal.type}</p>
                 <p>{animal.breed}</p>
                 <button onClick={() => handleDelete(animal.animalId)}>Delete</button>
-                <button onClick={() => handleEditClick(animal.animalId)}>Edit</button>
+                <button onClick={() => handleEditClick(animal)}>Edit</button>
               </li>
             </div>
             )}
