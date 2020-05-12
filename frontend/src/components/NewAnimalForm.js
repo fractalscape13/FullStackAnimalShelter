@@ -6,8 +6,23 @@ function NewAnimalForm() {
 
   const dispatch = useDispatch();
 
-  function handleAdd( ) {
-    dispatch(hideForm());
+  function handleAdd(event) {
+    const action = { 
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({name: event.target.name.value, type: event.target.type.value, breed: event.target.breed.value})
+    };
+    fetch('http://localhost:5004/api/animals', action)
+    .then(async response => {
+      const data = await response.json();
+      if (!response.ok) {
+        console.log("post error")
+      }
+      dispatch(hideForm());
+    })
+    .catch(error => {
+      console.log("there was an error")
+    });
   }
 
 
