@@ -34,3 +34,9 @@ export function showForm() {
     type: c.SHOW_FORM
   }
 }
+
+export function hideForm() {
+  return {
+    type: c.HIDE_FORM
+  }
+}

@@ -5,3 +5,4 @@ export const NEW_ANIMAL = 'NEW_ANIMAL';
 export const DELETE_ANIMAL = 'DELETE_ANIMAL';
 export const EDIT_ANIMAL = 'EDIT_ANIMAL';
 export const SHOW_FORM = 'SHOW_FORM';
+export const HIDE_FORM = 'HIDE_FORM';
