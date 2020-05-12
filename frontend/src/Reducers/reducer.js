@@ -33,6 +33,10 @@ export default (state=initialState, action) => {
       return Object.assign({}, state, {
         formVisible: true
       })
+    case c.HIDE_FORM:
+      return Object.assign({}, state, {
+        formVisible: false
+      })
       default:
         return state;
   }
