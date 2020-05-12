@@ -28,3 +28,9 @@ export function editAnimal(id) {
     type: c.EDIT_ANIMAL
   }
 }
+
+export function showForm() {
+  return {
+    type: c.SHOW_FORM
+  }
+}

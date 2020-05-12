@@ -1,9 +1,13 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import NewAnimalForm from './NewAnimalForm';
+import {showForm} from '../Actions/index';
 
 function AnimalList(props) {
+  const dispatch = useDispatch();
   const error = useSelector(state => state.error);
   const isLoaded = useSelector(state => state.isLoaded);
+  const formVisible = useSelector(state => state.formVisible);
 
   function handleDelete(id) {
     console.log(id)
@@ -13,14 +17,25 @@ function AnimalList(props) {
     console.log(id)
   }
 
-  if (error) {
+  function handleAddClick(){
+    dispatch(showForm());
+  }
+
+  if (formVisible) {
+    return (
+      <React.Fragment>
+        <NewAnimalForm />
+      </React.Fragment>
+    )
+  } else if (error) {
     return <React.Fragment>Error: {error.message}</React.Fragment>;
   } else if (isLoaded) {
     return <React.Fragment>Loading...</React.Fragment>;
   } else {
     return (
       <React.Fragment>
-        <h1>Animals in the shelter</h1>
+        <h1>Current Inventory</h1>
+        <button onClick={handleAddClick}>Add an animal</button>
         <ul>
           {props.list.map((animal, index) =>
             <div className="card" key={index}>
