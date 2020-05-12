@@ -1,9 +1,13 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { hideForm } from '../Actions/index';
 
 function NewAnimalForm() {
 
+  const dispatch = useDispatch();
+
   function handleAdd( ) {
-    
+    dispatch(hideForm());
   }
 
 
