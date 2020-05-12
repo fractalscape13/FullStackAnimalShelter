@@ -1,0 +1,32 @@
+body, html {
+  min-height: 100%;
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 255, 255, 0.719), rgb(197, 197, 241));
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  border: 5px solid rgb(117, 115, 115);
+  margin: 5px;
+  border-radius: 15px;
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: .6;
+}
+
+.card {
+  border: 2px solid black;
+  border-radius: 15px;
+  margin: 3px;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  max-width: 300px;
+  display: inline-block;
+}

@@ -52,7 +52,7 @@ namespace AnimalApi.Controllers
     }
 
     // POST api/animals
-    [Authorize]
+    // [Authorize]
     [HttpPost]
     public void Post([FromBody] Animal animal)
     {
@@ -61,7 +61,7 @@ namespace AnimalApi.Controllers
     }
 
     // PUT api/animals/id
-    [Authorize]
+    // [Authorize]
     [HttpPut("{id}")]
     public void Put(int id, [FromBody] Animal animal)
     {
@@ -71,7 +71,7 @@ namespace AnimalApi.Controllers
     }
 
     // DELETE api/animals/id
-    [Authorize]
+    // [Authorize]
     [HttpDelete("{id}")]
     public void Delete(int id)
     {
