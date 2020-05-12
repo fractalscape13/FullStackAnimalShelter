@@ -41,3 +41,7 @@ input {
   background-color: black;
   color: ivory;
 }
+
+img {
+  max-width: 250;
+}

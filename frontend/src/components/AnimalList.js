@@ -36,6 +36,8 @@ function AnimalList(props) {
     dispatch(showForm());
   }
 
+  const imgSource = "http://source.unsplash.com/250x150/?";
+
   if (editing) {
     return (
       <React.Fragment>
@@ -62,6 +64,7 @@ function AnimalList(props) {
             <div className="card" key={index}>
               <li>
                 <h3>{animal.name}</h3>
+                <img src={imgSource + animal.breed}  />
                 <p>{animal.type}</p>
                 <p>{animal.breed}</p>
                 <button onClick={() => handleDelete(animal.animalId)}>Delete</button>

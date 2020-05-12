@@ -11,7 +11,6 @@ function EditForm() {
     const requestOptions = { 
     method: 'PUT',
     headers: {'Content-Type': 'application/json'},
-    // id: currentAnimal.animalId,
     body: JSON.stringify({animalId: currentAnimal.animalId, name: event.target.name.value, type: event.target.type.value, breed: event.target.breed.value
     })
   };
