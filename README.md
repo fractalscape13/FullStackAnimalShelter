@@ -1,13 +1,13 @@
-# _Animal Shelter API_
+# _Animal Shelter Full Stack Adventure_
 
-#### _An inventory system for animals in the animal shelter_
+#### _An inventory system for animals in the animal shelter using a React front-end and a C#/.NET API with MySQL_
 
-#### By: **JW** 
-_April 3, 2020_
+#### By: **Joseph Wangemann, Alex Skreen** 
+_May 12, 2020_
 
 ## Description
 
-_This API allows users to GET, POST, PUT, and DELETE listings of animals in the animal shelter.  It has GET/POST routes for creating a user and an associated authentication token and requires authentication tokens for POST/PUT/DELETE animal routes._
+_The front-end of this application allows a user to GET, POST, PUT, and DELETE listings of animals in the animal shelter API.  It has GET/POST routes for creating a user and an associated authentication token and requires authentication tokens for POST/PUT/DELETE animal routes._
 
 ## Specifications / User Stories:
 * A user is able to GET all animals in the shelter.
@@ -101,19 +101,20 @@ _To view/edit the source code of this application, open the contents of the Anim
 
 ## Technologies Used
 
-* Git
+* React
+* Redux / React-Redux
 * C#
 * .NET Core 2.2
 * dotnet script
-* Asp.Net Core 2.2 MVC
 * MySQL
 * Entity Framework Core 2.2
 * Swagger 3.0 documentation (swagger.json)
 * NSwag
 * JSON Web Token Authentication
+* Git
 
 ## License
 
 _MIT license_
 
-&copy; 2020 - JW
+&copy; 2020 - JW, AS
