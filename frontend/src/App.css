@@ -27,10 +27,30 @@ button:hover {
   opacity: .6;
 }
 
+.header {
+  display: flex;
+  min-width: 100vw;
+}
+
+.headerTitle {
+  margin: 15px;
+}
+
+.headerLinks {
+  justify-content: right;
+  display: flex;
+  flex-direction: row;
+  margin-top: 28px;
+}
+
 h1 {
   background: -webkit-linear-gradient( rgba(76, 0, 130, 0.075), black, black);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+h3 {
+  margin-left: 25px;
 }
 
 .card {
