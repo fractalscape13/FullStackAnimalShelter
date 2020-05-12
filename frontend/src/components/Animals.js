@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import AnimalList from './AnimalList';
 import { useSelector, useDispatch } from 'react-redux';
 import {getAnimals} from '../Actions/index';
@@ -24,6 +24,10 @@ function Animals() {
       });
   }
 
+  useEffect(() => {
+    getList();
+  }, [list])
+
   if (list.length > 0) {
     return (
       <div>
@@ -33,7 +37,7 @@ function Animals() {
   } else {
     return (
       <div>
-        <button onClick={getList}>See all animals</button>
+        <h3>Loading....</h3>
       </div>
     )
   }
