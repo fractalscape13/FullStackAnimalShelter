@@ -6,7 +6,13 @@ function Account() {
 
   return (
     <div className="main">
-      <p>Your account info here</p>
+      <p>Please sign in</p>
+      <input
+        placeholder="Email" />
+      <input
+        placeholder="Password" />
+      <button>Login</button>
+      <a href="/account">New? Click to register</a>
     </div>
   );
 }

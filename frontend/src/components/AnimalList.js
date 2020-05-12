@@ -57,7 +57,7 @@ function AnimalList(props) {
   } else {
     return (
       <React.Fragment>
-        <h1>Current Inventory</h1>
+        <h2>Current Inventory</h2>
         <button onClick={handleAddClick}>Add an animal</button>
         <ul>
           {props.list.map((animal, index) =>

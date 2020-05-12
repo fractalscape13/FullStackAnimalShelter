@@ -25,6 +25,10 @@ function NewAnimalForm() {
     });
   }
 
+  function handleClick() {
+    dispatch(hideForm());
+  }
+
   return (
     <React.Fragment>
       <form onSubmit={handleAdd}>
@@ -42,6 +46,7 @@ function NewAnimalForm() {
           placeholder="Breed" /><br />
         <button type="submit">Add animal!</button>
       </form>
+      <p onClick={handleClick} className="clickable">Return to main page</p>
     </React.Fragment>
   )
 }
