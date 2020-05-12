@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import NewAnimalForm from './NewAnimalForm';
-import {showForm} from '../Actions/index';
+import {showForm, hideForm} from '../Actions/index';
 
 function AnimalList(props) {
   const dispatch = useDispatch();
@@ -10,7 +10,21 @@ function AnimalList(props) {
   const formVisible = useSelector(state => state.formVisible);
 
   function handleDelete(id) {
-    console.log(id)
+    const requestOptions = { 
+      method: 'DELETE',
+    };
+    fetch(('http://localhost:5004/api/animals/' + id), requestOptions)
+    .then(async response => {
+      const data = await response.json();
+      console.log("DATA", data)
+      dispatch(hideForm());
+      if (!response.ok) {
+        console.log("delete error")
+      }
+    })
+    .catch(error => {
+      console.log("there was a delete error", error)
+    });
   }
 
   function handleEdit(id) {

@@ -21,10 +21,9 @@ function NewAnimalForm() {
       dispatch(hideForm());
     })
     .catch(error => {
-      console.log("there was an error")
+      console.log("there was an error", error)
     });
   }
-
 
   return (
     <React.Fragment>

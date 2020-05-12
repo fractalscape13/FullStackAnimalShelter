@@ -3,7 +3,7 @@ body, html {
 }
 
 body {
-  background-image: linear-gradient(rgba(0, 255, 255, 0.719), rgb(197, 197, 241));
+  background-image: linear-gradient(rgba(0, 255, 255, 0.719), rgb(164, 164, 231));
   display: flex;
   justify-content: center;
 }
@@ -35,4 +35,9 @@ input {
   margin: 5px;
   border-radius: 15px;
   text-align: center;
+  border: none;
+  width: 280px;
+  height: 30px;
+  background-color: black;
+  color: ivory;
 }

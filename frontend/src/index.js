@@ -6,6 +6,8 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducer from './Reducers/reducer';
+// import thunkMiddleware from 'redux-thunk';
+// import Logger from './middleware/ogger';
 
 const store = createStore(
   reducer,
