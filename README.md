@@ -9,6 +9,10 @@ _May 12/13, 2020_
 
 _The front-end of this application allows a user to see the list of all animals in the database, as well as add, edit, or delete animals from the database.  The API has GET/POST routes for creating a user and an associated authentication token, but authentication is not set up with the front-end yet._
 
+## User Interface
+![UI](./public/screenshot.png?raw=true "Screen shot")
+
+
 ## API Specifications / User Stories: 
 ### (Specs that mention authentication do not actually require authentication at this stage)
 * A user is able to GET all animals in the shelter.
