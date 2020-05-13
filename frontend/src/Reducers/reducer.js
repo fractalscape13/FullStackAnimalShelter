@@ -24,10 +24,10 @@ export default (state=initialState, action) => {
         isLoaded: false,
         error: action.error
       });
-    case c.NEW_ANIMAL:
-      return Object.assign({}, state, {
-        formVisible: false
-      })
+    // case c.NEW_ANIMAL:
+    //   return Object.assign({}, state, {
+    //     formVisible: false
+    //   })
     case c.SHOW_FORM:
       return Object.assign({}, state, {
         formVisible: true

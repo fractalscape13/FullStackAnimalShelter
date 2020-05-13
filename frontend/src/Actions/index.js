@@ -5,6 +5,7 @@ export function requestAnimals() {
     type: c.GET_ANIMALS,
   }
 }
+
 export function requestAnimalsSuccess(response) {
   return {
     type: c.GET_ANIMALS_SUCCESS,
@@ -12,6 +13,7 @@ export function requestAnimalsSuccess(response) {
     isLoaded: true
   }
 }
+
 export function requestAnimalsFailure() {
   return {
     type: c.GET_ANIMALS_FAILURE,
@@ -81,7 +83,6 @@ export const deleteAnimal = (id) => {
     });
   }
 }
-
 
 export function showForm() {
   return {
