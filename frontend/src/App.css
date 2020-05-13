@@ -91,6 +91,7 @@ input {
 }
 
 img {
-  max-width: 250;
+  max-width: 250px;
+  max-height: 150px;
   border-radius: 15px;
 }
