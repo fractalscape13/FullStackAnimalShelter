@@ -7,9 +7,10 @@ _May 12/13, 2020_
 
 ## Description
 
-_The front-end of this application allows a user to see the list of all animals in the database, add new animals, edit existing animals, or delete from the database.  The API has GET/POST routes for creating a user and an associated authentication token, but authentication is not set up with the front-end yet._
+_The front-end of this application allows a user to see the list of all animals in the database, as well as add, edit, or delete animals from the database.  The API has GET/POST routes for creating a user and an associated authentication token, but authentication is not set up with the front-end yet._
 
-## API Specifications / User Stories: (Specs that mention authentication do not actually require authentication at this stage)
+## API Specifications / User Stories: 
+### (Specs that mention authentication do not actually require authentication at this stage)
 * A user is able to GET all animals in the shelter.
 * A user is able to GET an individual animal listing.
 * A user is able to POST a new user (username and password fields required).
@@ -36,6 +37,7 @@ _The front-end of this application allows a user to see the list of all animals 
 ## Setup/Installation Requirements
 
 _Setup assumes use of Git version control_
+
 _This project contains a front-end application (frontend) and a back-end (AnimalApi).  You will need to run both projects on separate ports for the application to function._
 
 ### Install .NET Core
@@ -109,7 +111,8 @@ _To view/edit the source code of this application, open the contents of the Anim
 
 ## Technologies Used
 
-* React / React-Router
+* React 
+* React-Router
 * Redux / React-Redux
 * Redux-Thunk
 * C#
