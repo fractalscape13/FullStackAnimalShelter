@@ -33,12 +33,37 @@ export const getAnimals = () => {
   }
 }
 
-export function newAnimal(animal) {
-  return {
-    type: c.NEW_ANIMAL,
-    name: animal.name,
-    type: animal.type,
-    breed: animal.breed
+export const newAnimal = (event) => {
+  return dispatch => {
+    const requestOptions = {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({name: event.target.name.value, type: event.target.type.value, breed: event.target.breed.value})
+    };
+    return fetch('http://localhost:5004/api/animals', requestOptions)
+    .then(() => {
+      dispatch(getAnimals())
+    })
+    .catch(error => {
+      console.log('there was a post error', error)
+    });
+  }
+}
+
+export const editAnimal = (event, id) => {
+  return dispatch => {
+    const requestOptions = {
+      method: 'PUT',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({animalId: id, name: event.target.name.value, type: event.target.type.value, breed: event.target.breed.value})
+    };
+    return fetch(('http://localhost:5004/api/animals/' + id), requestOptions)
+    .then(() => {
+        dispatch(getAnimals())
+      })
+      .catch(error => {
+        console.log('there was an update error', error)
+    });
   }
 }
 
@@ -57,23 +82,6 @@ export const deleteAnimal = (id) => {
   }
 }
 
-export const editAnimal = (event, id) => {
-  return dispatch => {
-    const requestOptions = {
-      method: 'PUT',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({animalId: id, name: event.target.name.value, type: event.target.type.value, breed: event.target.breed.value})
-    };
-    return fetch(('http://localhost:5004/api/animals/' + id), requestOptions)
-    .then(() => {
-      debugger
-        dispatch(getAnimals())
-      })
-      .catch(error => {
-        console.log('there was an update error', error)
-    });
-  }
-}
 
 export function showForm() {
   return {

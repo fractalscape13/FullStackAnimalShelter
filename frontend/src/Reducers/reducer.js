@@ -18,7 +18,6 @@ export default (state=initialState, action) => {
       return Object.assign({}, state, {
         list: action.list,
         isLoaded: true,
-        animals: action.animals
       });
     case c.GET_ANIMALS_FAILURE:
       return Object.assign({}, state, {
