@@ -3,13 +3,13 @@
 #### _An inventory system for animals in the animal shelter using a React front-end and a C#/.NET API with MySQL_
 
 #### By: **Joseph Wangemann, Alex Skreen** 
-_May 12, 2020_
+_May 12/13, 2020_
 
 ## Description
 
-_The front-end of this application allows a user to GET, POST, PUT, and DELETE listings of animals in the animal shelter API.  It has GET/POST routes for creating a user and an associated authentication token and requires authentication tokens for POST/PUT/DELETE animal routes._
+_The front-end of this application allows a user to see the list of all animals in the database, add new animals, edit existing animals, or delete from the database.  The API has GET/POST routes for creating a user and an associated authentication token, but authentication is not set up with the front-end yet._
 
-## Specifications / User Stories:
+## API Specifications / User Stories: (Specs that mention authentication do not actually require authentication at this stage)
 * A user is able to GET all animals in the shelter.
 * A user is able to GET an individual animal listing.
 * A user is able to POST a new user (username and password fields required).
@@ -36,6 +36,7 @@ _The front-end of this application allows a user to GET, POST, PUT, and DELETE l
 ## Setup/Installation Requirements
 
 _Setup assumes use of Git version control_
+_This project contains a front-end application (frontend) and a back-end (AnimalApi).  You will need to run both projects on separate ports for the application to function._
 
 ### Install .NET Core
 
@@ -83,8 +84,8 @@ _Add the MySQL environment variable to the System PATH. Instructions for Windows
 
 _Enter the following commands in Terminal (macOS) or PowerShell (Windows):_
 * ``cd desktop``
-* ``git clone https://github.com/fractalscape13/AnimalApi.Solution``
-* ``cd AnimalApi.Solution/AnimalApi``
+* ``git clone https://github.com/fractalscape13/FullStackAnimalShelter``
+* ``cd FullStackAnimalShelter/AnimalApi``
 
 _Confirm that you have navigated to the AnimalApi directory (e.g., by entering the command_ ``pwd`` _in Terminal)._
 
@@ -97,15 +98,22 @@ _Run this application by entering the following command in Terminal (macOS) or P
 * ``dotnet run`` or ``dotnet watch run``
 * access the [Swagger UI](http://localhost:5004/swagger/index.html) for testing this API
 
+
+_Open another terminal and navigate into the frontend directory ``cd frontend``_
+
+_Install all dependencies ``npm install``_
+
+_Run the front-end in a separate port ``npm start``_
+
 _To view/edit the source code of this application, open the contents of the AnimalApi.Solution directory in a text editor or IDE of your choice (e.g., to open all contents of the directory in Visual Studio Code on macOS, enter the command_ ``code .`` _in Terminal at the root of the AnimalApi.Solution directory)._
 
 ## Technologies Used
 
-* React
+* React / React-Router
 * Redux / React-Redux
+* Redux-Thunk
 * C#
 * .NET Core 2.2
-* dotnet script
 * MySQL
 * Entity Framework Core 2.2
 * Swagger 3.0 documentation (swagger.json)
