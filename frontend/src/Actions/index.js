@@ -53,13 +53,25 @@ export const deleteAnimal = (id) => {
       })
       .catch(error => {
       console.log("there was a delete error", error)
-      });
-    }
+    });
   }
+}
 
-export function editAnimal(id) {
-  return {
-    type: c.EDIT_ANIMAL
+export const editAnimal = (event, id) => {
+  return dispatch => {
+    const requestOptions = {
+      method: 'PUT',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({animalId: id, name: event.target.name.value, type: event.target.type.value, breed: event.target.breed.value})
+    };
+    return fetch(('http://localhost:5004/api/animals/' + id), requestOptions)
+    .then(() => {
+      debugger
+        dispatch(getAnimals())
+      })
+      .catch(error => {
+        console.log('there was an update error', error)
+    });
   }
 }
 
