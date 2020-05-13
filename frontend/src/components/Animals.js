@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import AnimalList from './AnimalList';
 import { useSelector, useDispatch } from 'react-redux';
 // import {getAnimals} from '../Actions/index';
@@ -7,6 +7,7 @@ import {getAnimals} from '../Actions/index';
 function Animals() {
   const list = useSelector(state => state.list);
   const dispatch = useDispatch();
+  const [dummy, setDummy] = useState('');
   
   // function getList (){
   //   fetch(`http://localhost:5004/api/animals`)
@@ -29,6 +30,10 @@ function Animals() {
     dispatch(getAnimals());
     // getList();
   }, [])
+
+  useEffect(() => {
+    setDummy('');
+  }, [list])
 
   if (list.length > 0) {
     return (

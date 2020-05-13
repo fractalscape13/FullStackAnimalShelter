@@ -6,7 +6,6 @@ export function requestAnimals() {
   }
 }
 export function requestAnimalsSuccess(response) {
-  console.log("SUCCESS", response)
   return {
     type: c.GET_ANIMALS_SUCCESS,
     list: response,
@@ -22,12 +21,10 @@ export function requestAnimalsFailure() {
 
 export const getAnimals = () => {
   return dispatch => {
-    dispatch(requestAnimals);
     return fetch('http://localhost:5004/api/animals')
       .then(response => response.json())
       .then(
         (jsonifiedResponse) => {
-          console.log("JSON RESULTS", jsonifiedResponse)
           dispatch(requestAnimalsSuccess(jsonifiedResponse))
         })
       .catch((error) => {
@@ -45,11 +42,20 @@ export function newAnimal(animal) {
   }
 }
 
-export function deleteAnimal(id) {
-  return {
-    type: c.DELETE_ANIMAL
+export const deleteAnimal = (id) => {
+  return dispatch => {
+    const requestOptions = { 
+      method: 'DELETE',
+    };
+    return fetch(('http://localhost:5004/api/animals/' + id), requestOptions)
+      .then( () => {
+        dispatch(getAnimals())
+      })
+      .catch(error => {
+      console.log("there was a delete error", error)
+      });
+    }
   }
-}
 
 export function editAnimal(id) {
   return {

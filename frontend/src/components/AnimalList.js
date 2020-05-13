@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import NewAnimalForm from './NewAnimalForm';
 import EditForm from './EditForm';
-import {showForm, showEditForm} from '../Actions/index';
+import {showForm, showEditForm, deleteAnimal} from '../Actions/index';
 
 function AnimalList(props) {
   const dispatch = useDispatch();
@@ -12,20 +12,21 @@ function AnimalList(props) {
   const editing = useSelector(state => state.editing);
 
   function handleDelete(id) {
-    const requestOptions = { 
-      method: 'DELETE',
-    };
-    fetch(('http://localhost:5004/api/animals/' + id), requestOptions)
-    .then(response => response.json())
-    //   console.log("DATA", data)
-    //   dispatch(hideForm());
-    //   if (!response.ok) {
-    //     console.log("delete error")
-    //   }
-    // }
-    .catch(error => {
-      console.log("there was a delete error", error)
-    });
+    dispatch(deleteAnimal(id));
+    // const requestOptions = { 
+    //   method: 'DELETE',
+    // };
+    // fetch(('http://localhost:5004/api/animals/' + id), requestOptions)
+    // .then(response => response.json())
+    // //   console.log("DATA", data)
+    // //   dispatch(hideForm());
+    // //   if (!response.ok) {
+    // //     console.log("delete error")
+    // //   }
+    // // }
+    // .catch(error => {
+    //   console.log("there was a delete error", error)
+    // });
   }
 
   function handleEditClick(animal) {
