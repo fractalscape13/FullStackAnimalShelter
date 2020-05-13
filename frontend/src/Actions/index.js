@@ -1,10 +1,38 @@
 import * as c from './ActionTypes';
 
-export function getAnimals(response) {
+export function requestAnimals() {
   return {
     type: c.GET_ANIMALS,
+  }
+}
+export function requestAnimalsSuccess(response) {
+  console.log("SUCCESS", response)
+  return {
+    type: c.GET_ANIMALS_SUCCESS,
     list: response,
     isLoaded: true
+  }
+}
+export function requestAnimalsFailure() {
+  return {
+    type: c.GET_ANIMALS_FAILURE,
+    error: true
+  }
+}
+
+export const getAnimals = () => {
+  return dispatch => {
+    dispatch(requestAnimals);
+    return fetch('http://localhost:5004/api/animals')
+      .then(response => response.json())
+      .then(
+        (jsonifiedResponse) => {
+          console.log("JSON RESULTS", jsonifiedResponse)
+          dispatch(requestAnimalsSuccess(jsonifiedResponse))
+        })
+      .catch((error) => {
+        dispatch(requestAnimalsFailure(error));
+      });
   }
 }
 

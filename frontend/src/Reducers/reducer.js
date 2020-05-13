@@ -13,18 +13,16 @@ export default (state=initialState, action) => {
   switch (action.type) {
     case c.GET_ANIMALS:
       return Object.assign({}, state, {
-        list: action.list,
-        isLoaded: false,
-        error: false
       });
       case c.GET_ANIMALS_SUCCESS:
       return Object.assign({}, state, {
-        isLoading: false,
+        list: action.list,
+        isLoaded: true,
         animals: action.animals
       });
     case c.GET_ANIMALS_FAILURE:
       return Object.assign({}, state, {
-        isLoading: false,
+        isLoaded: false,
         error: action.error
       });
     case c.NEW_ANIMAL:
