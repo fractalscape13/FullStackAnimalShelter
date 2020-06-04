@@ -1,6 +1,6 @@
 # _Animal Shelter Full Stack Adventure_
 
-#### _An inventory system for animals in the animal shelter using a React front-end and a C#/.NET API with MySQL_
+#### _An inventory system for animals in a mock animal shelter using a React front-end and a C#/.NET API with MySQL_
 
 #### By: **Joseph Wangemann, Alex Skreen** 
 _May 12/13, 2020_
@@ -125,7 +125,6 @@ _To view/edit the source code of this application, open the contents of the Anim
 * Swagger 3.0 documentation (swagger.json)
 * NSwag
 * JSON Web Token Authentication
-* Git
 
 ## License
 
